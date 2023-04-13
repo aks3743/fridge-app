@@ -33,7 +33,7 @@ with tab1:
         st.metric(label="#Expiring today", value=kpi2)
 
     with col3:
-        st.metric(label="Expiring in a week", value=kpi3)
+        st.metric(label="#Expiring in a week", value=kpi3)
     with col4:
         st.metric(label="Money in fridge £", value=kpi4)
     
