@@ -58,7 +58,7 @@ This project is licensed under the MIT License - see the
 ### additional info
 
 i have created the app in raspberypi4
-make changes according to youe OS
+make changes according to your OS
 
 <!-- create a .env file in the cwd -->
 <!-- no need of quotes for the values -->
