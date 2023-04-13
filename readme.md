@@ -44,9 +44,9 @@ To use Fridge App, follow these steps:
 
 1. Open the app in your web browser
 2. Click the "Add Item" button to add a new item to your fridge
-3. Enter the name, expiry date, and quantity of the item
-4. Click the "Save" button to add the item to your fridge
-5. To remove an item, click the "Remove" button next to the item you want to remove
+3. Enter the name,price, expiry date, and quantity of the item
+4. Click the "Submit new items" button to add the item to your fridge
+5. To remove an item, click the "Delete" button next to the item you want to remove after selecting the Slno
 
 
 
