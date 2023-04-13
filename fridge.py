@@ -4,7 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 from  support.connect_to_db import connect_to_pdts
-from support.connect_to_db import update_pdts, delete_products_by_slno
+from support.connect_to_db import update_pdts, delete_products_by_slno, color_df
 
 tab1, tab2, tab3, tab4 = st.tabs(["Summary", "Update items", "Expired",'Delete Data'])
 
@@ -44,18 +44,20 @@ with tab1:
     st.plotly_chart(fig1)
 
     # Visualization 3: Pie chart of products by expiry date
-    labels = df['product']
-    values = df['number_of_items']
-    st.write("## Products by Expiry Date")
-    fig3 = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3,textinfo= 'label+percent')])
+    labels = df['expiry_date']#df['product']
+    values = df['cost']
+    # text = 
+    st.write("## Cost by Expiry Date")
+    fig3 = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.6,textinfo= 'label+value+percent')])
     st.plotly_chart(fig3)
 
     # Visualization 2: Line chart of prices by product
-    st.write("## Prices by Product")
+    st.write("## Product Prices by Expiry date")
     fig2 = px.bar(df, x='expiry_date', y='price', color='product', height=400)
     st.plotly_chart(fig2)
     #tabular view
-    st.table(df[['product','price','expiry_date','number_of_items','cost']])
+    st.write('## Tabular view with Expiry date  ')
+    st.table(df[['product','price','expiry_date','number_of_items','cost']].style.applymap(color_df,subset=['expiry_date',]))
 
 
 with tab2:
@@ -104,7 +106,7 @@ with tab2:
 
         # Visualization 2: Line chart of prices by product
         st.write("## Prices by Product")
-        fig = px.line(df2, x='expiry_date', y='price', color='product', height=400)
+        fig = px.scatter(df2, x='expiry_date', y='price', color='product', height=400)
         st.plotly_chart(fig)
 
 

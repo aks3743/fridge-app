@@ -80,3 +80,9 @@ def delete_products_by_slno(slno_list):
     conn.close()
 
     
+def color_df(val):
+    if val < pd.Timestamp.today().date():
+        color  = 'red'
+    else :
+        color = 'lightgreen'
+    return f'background-color: {color}'
